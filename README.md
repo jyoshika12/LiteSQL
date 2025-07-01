@@ -1,6 +1,6 @@
 # LiteSQL
 
-**LiteSQL** is a lightweight, custom-built **SQL-like database engine** written in Python.  
+A lightweight custom-built SQL engine written in Python — simulating a mini relational database management system (Mini RDBMS) with in-memory tables, indexing, and persistent storage.
 It supports core SQL commands, persistent storage, in-memory indexing, and command-line interaction — inspired by how real DBMS systems like SQLite work under the hood.
 
 ---
@@ -51,7 +51,7 @@ python main.py
 
 
 
-##Sample Commands
+## Sample Commands
 -- Create a table with a PRIMARY KEY (auto-indexed)
 CREATE TABLE students (id PRIMARY KEY, name, marks);
 
