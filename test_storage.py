@@ -2,7 +2,6 @@ import pytest
 from storage import create_table, insert_into, select_all, delete_from, update_table, drop_table, tables
 
 def setup_function():
-    # Reset global state before each test
     tables.clear()
 
 def test_create_and_insert():
