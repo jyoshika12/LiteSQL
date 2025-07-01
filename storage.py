@@ -38,7 +38,6 @@ def insert_into(name, values):
 
     tables[name]["rows"].append(values)
 
-    # update index if any
     for col in tables[name]["indexes"]:
         col_idx = tables[name]["columns"].index(col)
         key = values[col_idx]
@@ -57,7 +56,7 @@ def delete_from(name, where):
 
     for row in tables[name]["rows"]:
         if where(row, col_names):
-            # remove from index if indexed
+            
             for col in indexes:
                 col_idx = col_names.index(col)
                 key = row[col_idx]
@@ -84,7 +83,6 @@ def update_table(name, column, value, where):
 
     for row in tables[name]["rows"]:
         if where(row, col_names):
-            # if indexed column, update index
             for col in indexes:
                 if column == col:
                     old_key = row[col_idx]
@@ -109,7 +107,6 @@ def select_all(name, where=None):
     col_names = tables[name]["columns"]
     results = []
 
-    # Use index if available
     if where and "indexes" in tables[name]:
         try:
             code = where.__code__
